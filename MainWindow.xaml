@@ -1,0 +1,107 @@
+﻿<Window x:Class="Custom_Control_Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Custom_Control_Demo"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border
+            x:Name="CardBack"
+            Height="250"
+            Width="250"
+            BorderBrush="#99000000"
+            BorderThickness="5"
+            CornerRadius="15"
+            Background="#FF000000"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Grid.Column="1"
+            Grid.Row="1"
+            />
+
+        <Label
+            x:Name="CardTitle"
+            Content="Card Title"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Width="230"
+            Margin="10,10,10,10"
+            Foreground="#FFFFFFFF"
+            Grid.Column="1"
+            Grid.Row="1"/>
+
+        <Label
+            x:Name="CardContent"
+            Content="XXXX"
+            FontSize="72"
+            Foreground="#FFFFFFFF"
+            Margin="10,50,10,10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Width="230"
+            Height="150"
+            Grid.Column="1"
+            Grid.Row="1"/>
+
+        <local:SimpleCard
+                Grid.Column="3"
+                Grid.Row="1"
+                CardTitle="Hello"
+                CardContent="12343"
+                CardBackground="Red"
+                CardBorderColor="#FF006600"
+                CardBorderWidth="10"
+                CardBorderRadius="100"
+                />
+
+
+        <!--<Border
+            Height="250"                    Width="250"
+            Grid.Column="1"                 Grid.Row="3"
+            BorderBrush="Black"             BorderThickness="1"
+            HorizontalAlignment="Center"    VerticalAlignment="Center"
+        >
+            <lvc:CartesianChart
+                x:Name="ChartDemo"
+                Grid.Column="1"             Grid.Row="1"
+                Margin="5,5,5,5"
+                Series="{Binding ChartData}"
+                Hoverable="false"
+                DataTooltip="{x:Null}"
+                >
+            </lvc:CartesianChart>
+        </Border>-->
+
+        <local:ChartCard
+                x:Name="ChartControl"
+                Grid.Column="3"
+                Grid.Row="3"
+                CardTitle="Chart Title"
+                />
+
+    </Grid>
+</Window>
